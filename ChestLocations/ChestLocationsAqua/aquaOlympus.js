@@ -1,6 +1,6 @@
 export const aquaOlympus = [
-  {address: "D73056", name: "Fire Strike", prefix: "8" },
-  {address: "D7305E", name: "Cura", prefix: "8" },
-  {address: "D73066", name: "Mega-Potion", prefix: "8" },
-  {address: "D7306E", name: "Map (Olympus Coliseum)", prefix: "8" },
+  {address: "version_choice({0x0, 0xD75356}, game_version)", name: "Fire Strike", prefix: "8" },
+  {address: "version_choice({0x0, 0xD7535E}, game_version)", name: "Cura", prefix: "8" },
+  {address: "version_choice({0x0, 0xD75366}, game_version)", name: "Mega-Potion", prefix: "8" },
+  {address: "version_choice({0x0, 0xD7536E}, game_version)", name: "Map (Olympus Coliseum)", prefix: "8" },
 ];

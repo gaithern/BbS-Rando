@@ -1,4 +1,4 @@
 export const aquaGraveyardStickers = [
-  { address: "D72DAE", name: "Flower Sticker", prefix: "D" },
-  { address: "D72DC6", name: "Bubble Sticker", prefix: "D" },
+  { address: "version_choice({0x0, 0xD758AE}, game_version)", name: "Flower Sticker", prefix: "D" },
+  { address: "version_choice({0x0, 0xD758C6}, game_version)", name: "Bubble Sticker", prefix: "D" },
 ];

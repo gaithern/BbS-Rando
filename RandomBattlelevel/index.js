@@ -1,13 +1,11 @@
 import { orbsCheck } from "../RandoInitialization/index.js";
-import { offset } from "../RandoGeneralFunctions/index.js";
 
 // Initializes variable for the Battle Level
-const battleLevel = parseInt("10F9F505", 16) - offset;
+const battleLevel = "version_choice({0x0, 0x10FA2005}, game_version)";
 
 // Initializes function to get a specific battle Level adress
 export function battleLevelAddress(counter) {
-  let level = battleLevel + counter;
-  level = level.toString(16).toUpperCase();
+  let level = `${battleLevel} + ${counter}`;
   return level;
 }
 
@@ -24,11 +22,11 @@ export function randomBattleLevel(characterDigit) {
   for (let i = 1; i < 12; i++) {
     let random = randomBattleLevelGenerator(3, 1);
     let level = battleLevelAddress(i);
-    luascript.push(`WriteByte(0x${level}, 0x${random})`);
+    luascript.push(`WriteByte(${level}, 0x${random})`);
   }
   let random = randomBattleLevelGenerator(10, 8);
   let level = battleLevelAddress(12);
-  luascript.push(`WriteByte(0x${level}, 0x${random})`);
+  luascript.push(`WriteByte(${level}, 0x${random})`);
   luascript.push(`end`);
   return luascript.join("\n");
 }

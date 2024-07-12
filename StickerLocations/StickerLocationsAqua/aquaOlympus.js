@@ -1,3 +1,3 @@
 export const aquaOlympusStickers = [
-  { address: "D72D4E", name: "Fireworks Sticker", prefix: "8" },
+  { address: "version_choice({0x0, 0xD7584E}, game_version)", name: "Fireworks Sticker", prefix: "8" },
 ];

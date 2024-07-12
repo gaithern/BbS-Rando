@@ -1,4 +1,4 @@
 export const ventusNeverlandStickers = [
-  { address: "D73196", name: "Rainbow Sticker", prefix: "B" },
-  { address: "D731A6", name: "Dale Sticker", prefix: "B" },
+  { address: "version_choice({0x0, 0xD75C96}, game_version)", name: "Rainbow Sticker", prefix: "B" },
+  { address: "version_choice({0x0, 0xD75CA6}, game_version)", name: "Dale Sticker", prefix: "B" },
 ];

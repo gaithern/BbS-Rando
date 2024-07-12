@@ -1,5 +1,5 @@
 export const ventusRadiantStickers = [
-  { address: "D7317E", name: "Huey Sticker", prefix: "6" },
-  { address: "D731B6", name: "Fireworks Sticker", prefix: "6" },
-  { address: "D731CE", name: "Ice Cream Sticker", prefix: "6" },
+  { address: "version_choice({0x0, 0xD75C7E}, game_version)", name: "Huey Sticker", prefix: "6" },
+  { address: "version_choice({0x0, 0xD75CB6}, game_version)", name: "Fireworks Sticker", prefix: "6" },
+  { address: "version_choice({0x0, 0xD75CCE}, game_version)", name: "Ice Cream Sticker", prefix: "6" },
 ];

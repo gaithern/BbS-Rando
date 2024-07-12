@@ -1,3 +1,3 @@
 export const aquaTowerStickers = [
-  { address: "D72D3E", name: "Donald Sticker", prefix: "5" },
+  { address: "version_choice({0x0, 0xD7583E}, game_version)", name: "Donald Sticker", prefix: "5" },
 ];

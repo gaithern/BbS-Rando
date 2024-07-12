@@ -59,7 +59,29 @@ click.addEventListener("click", randomization);
 
 // Initializes main function that runs the randomization
 function randomization() {
-  const finished = [`function _OnInit()\nend\n\nfunction _OnFrame()`];
+  const finished = [`game_version = 1 --1 for EGS 1.0.0.9, 2 for Steam
+can_execute = false
+function version_choice(array, choice)
+a = array
+return a[choice]
+end
+function _OnInit()
+IsEpicGLVersion = 0x6107D4
+IsSteamGLVersion = 0x6107B4
+if ReadByte(IsEpicGLVersion) == 0xFF then
+game_version = 1
+can_execute = false
+ConsolePrint("EGS Version Detected")
+ConsolePrint("EGS Version Unsupported, Please Use Steam Version")
+end
+if ReadByte(IsSteamGLVersion) == 0xFF then
+game_version = 2
+can_execute = true
+ConsolePrint("Steam Version Detected")
+end
+end
+function _OnFrame()
+if can_execute then`];
   for (let i = 0; i < 3; i++) {
     const characterCheck = storyCheck(characterDigit[i]);
     // const battleLevel = randomBattleLevel(characterDigit[i]);
@@ -111,7 +133,7 @@ function randomization() {
       `end\nend\nend\nend`
     );
   }
-  finished.push(`end`);
+  finished.push(`end\nend`);
 
   // Introduces download functionality to the website
   var textToSave = finished.join("\n");

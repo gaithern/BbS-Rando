@@ -1,5 +1,5 @@
 export const terraEnchantedStickers = [
-  { address: "D72936", name: "Huey Sticker", prefix: "4" },
-  { address: "D7296E", name: "Flying Balloon Sticker", prefix: "4" },
-  { address: "D7298E", name: "Balloon Sticker", prefix: "4" },
+  { address: "version_choice({0x0, 0xD75436}, game_version)", name: "Huey Sticker", prefix: "4" },
+  { address: "version_choice({0x0, 0xD7546E}, game_version)", name: "Flying Balloon Sticker", prefix: "4" },
+  { address: "version_choice({0x0, 0xD7548E}, game_version)", name: "Balloon Sticker", prefix: "4" },
 ];

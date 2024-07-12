@@ -1,9 +1,9 @@
 export const terraGraveyard = [
-  { address: "D72DA6", name: "Elixir", prefix: "D" },
-  { address: "D72DAE", name: "Mega-Potion", prefix: "D" },
-  { address: "D72DB6", name: "Map (Keyblade Graveyard)", prefix: "D" },
-  { address: "D72D86", name: "Windcutter", prefix: "D" },
-  { address: "D72D8E", name: "Mega-Potion", prefix: "D" },
-  { address: "D72D96", name: "Mega-Ether", prefix: "D" },
-  { address: "D72D9E", name: "Megalixir", prefix: "D" },
+  { address: "version_choice({0x0, 0xD750A6}, game_version)", name: "Elixir", prefix: "D" },
+  { address: "version_choice({0x0, 0xD750AE}, game_version)", name: "Mega-Potion", prefix: "D" },
+  { address: "version_choice({0x0, 0xD750B6}, game_version)", name: "Map (Keyblade Graveyard)", prefix: "D" },
+  { address: "version_choice({0x0, 0xD75086}, game_version)", name: "Windcutter", prefix: "D" },
+  { address: "version_choice({0x0, 0xD7508E}, game_version)", name: "Mega-Potion", prefix: "D" },
+  { address: "version_choice({0x0, 0xD75096}, game_version)", name: "Mega-Ether", prefix: "D" },
+  { address: "version_choice({0x0, 0xD7509E}, game_version)", name: "Megalixir", prefix: "D" },
 ];

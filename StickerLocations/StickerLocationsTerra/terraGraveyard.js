@@ -1,3 +1,3 @@
 export const terraGraveyardStickers = [
-  { address: "D729AE", name: "Traffic Cone Sticker", prefix: "D" },
+  { address: "version_choice({0x0, 0xD754AE}, game_version)", name: "Traffic Cone Sticker", prefix: "D" },
 ];

@@ -1,3 +1,3 @@
 export const terraOlympusStickers = [
-  { address: "D729BE", name: "Balloon Sticker", prefix: "8" },
+  { address: "version_choice({0x0, 0xD754BE}, game_version)", name: "Balloon Sticker", prefix: "8" },
 ];

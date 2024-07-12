@@ -1,3 +1,3 @@
 export const ventusTowerStickers = [
-  { address: "D731E6", name: "Ice Cream Sticker", prefix: "5" },
+  { address: "version_choice({0x0, 0xD75CE6}, game_version)", name: "Ice Cream Sticker", prefix: "5" },
 ];

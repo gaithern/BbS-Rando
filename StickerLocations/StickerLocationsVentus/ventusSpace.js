@@ -1,4 +1,4 @@
 export const ventusSpaceStickers = [
-  { address: "D731D6", name: "Ice Cream Sticker", prefix: "9" },
-  { address: "D731F6", name: "UFO Sticker", prefix: "9" },
+  { address: "version_choice({0x0, 0xD75CD6}, game_version)", name: "Ice Cream Sticker", prefix: "9" },
+  { address: "version_choice({0x0, 0xD75CF6}, game_version)", name: "UFO Sticker", prefix: "9" },
 ];

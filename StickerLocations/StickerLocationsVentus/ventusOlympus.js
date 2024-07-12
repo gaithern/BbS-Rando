@@ -1,3 +1,3 @@
 export const ventusOlympusStickers = [
-  { address: "D73206", name: "Confetti Sticker", prefix: "8" },
+  { address: "version_choice({0x0, 0xD75D06}, game_version)", name: "Confetti Sticker", prefix: "8" },
 ];

@@ -8,18 +8,11 @@ import { singleDuplicateRewardsTerra } from "../CutsceneRewards/CutsceneRewardsT
 import { doubleRewardsTerra } from "../CutsceneRewards/CutsceneRewardsTerra/doubleRewardsTerra.js";
 import { doubleDuplicateRewardsTerra } from "../CutsceneRewards/CutsceneRewardsTerra/doubleDuplicateRewardsTerra.js";
 
-// Initializes variable for the lua offset that needs to be subtracted from adresses
-const offset = parseInt("60E334", 16);
-
 // Initializes variables for Cutscene Reward randomization
-let reward1 = parseInt("10F9C998", 16) - offset;
-reward1 = reward1.toString(16).toUpperCase();
-let reward2 = parseInt("10F9C980", 16) - offset;
-reward2 = reward2.toString(16).toUpperCase();
-let reward3 = parseInt("10F9C968", 16) - offset;
-reward3 = reward3.toString(16).toUpperCase();
-let reward4 = parseInt("10F9C9A8", 16) - offset;
-reward4 = reward4.toString(16).toUpperCase();
+let reward1 = "version_choice({0x0, 0x10F9F498}, game_version)"
+let reward2 = "version_choice({0x0, 0x10F9F480}, game_version)"
+let reward3 = "version_choice({0x0, 0x10F9F468}, game_version)"
+let reward4 = "version_choice({0x0, 0x10F9F4A8}, game_version)"
 
 // Initializes function that randomizes Cutscene Rewards
 export function randomCutsceneRewards(
@@ -39,11 +32,11 @@ export function randomCutsceneRewards(
         // Checks if drafted object is an item (Category 0) or a command (Category 1) and writes the lua accordingly
         if (element1.category == "00") {
           luascript.push(
-            `${cutsceneRewardChecks.value[i]}WriteInt(0x${reward1}, 0x2800${element1.digit})\nWriteInt(0x${reward2}, 0x2800${element1.digit})\nWriteInt(0x${reward3}, 0x2800${element1.digit})\nend\n`
+            `${cutsceneRewardChecks.value[i]}WriteInt(${reward1}, 0x2800${element1.digit})\nWriteInt(${reward2}, 0x2800${element1.digit})\nWriteInt(${reward3}, 0x2800${element1.digit})\nend\n`
           );
         } else {
           luascript.push(
-            `${cutsceneRewardChecks.value[i]}WriteInt(0x${reward1}, 0x0000${element1.digit})\nWriteInt(0x${reward2}, 0x0000${element1.digit})\nWriteInt(0x${reward3}, 0x0000${element1.digit})\nend\n`
+            `${cutsceneRewardChecks.value[i]}WriteInt(${reward1}, 0x0000${element1.digit})\nWriteInt(${reward2}, 0x0000${element1.digit})\nWriteInt(${reward3}, 0x0000${element1.digit})\nend\n`
           );
         }
       }
@@ -56,21 +49,21 @@ export function randomCutsceneRewards(
         // Checks if first drafted object is an item (Category 0) or a command (Category 1) and writes the lua accordingly
         if (element1.category == "00") {
           luascript.push(
-            `${cutsceneRewardChecks.value[i]}WriteInt(0x${reward1}, 0x2800${element1.digit})\nWriteInt(0x${reward3}, 0x2800${element1.digit})\n`
+            `${cutsceneRewardChecks.value[i]}WriteInt(${reward1}, 0x2800${element1.digit})\nWriteInt(${reward3}, 0x2800${element1.digit})\n`
           );
         } else {
           luascript.push(
-            `${cutsceneRewardChecks.value[i]}WriteInt(0x${reward1}, 0x0000${element1.digit})\nWriteInt(0x${reward3}, 0x0000${element1.digit})\n`
+            `${cutsceneRewardChecks.value[i]}WriteInt(${reward1}, 0x0000${element1.digit})\nWriteInt(${reward3}, 0x0000${element1.digit})\n`
           );
         }
         // Checks if second drafted object is an item (Category 0) or a command (Category 1) and writes the lua accordingly
         if (element2.category == "00") {
           luascript.push(
-            `WriteInt(0x${reward2}, 0x2800${element2.digit})\nend\n`
+            `WriteInt(${reward2}, 0x2800${element2.digit})\nend\n`
           );
         } else {
           luascript.push(
-            `WriteInt(0x${reward2}, 0x0000${element2.digit})\nend\n`
+            `WriteInt(${reward2}, 0x0000${element2.digit})\nend\n`
           );
         }
       } else {
@@ -81,27 +74,27 @@ export function randomCutsceneRewards(
         // Checks if first drafted object is an item (Category 0) or a command (Category 1) and writes the lua accordingly
         if (element1.category == "00") {
           luascript.push(
-            `${cutsceneRewardChecks.value[i]}WriteInt(0x${reward1}, 0x2800${element1.digit})\n`
+            `${cutsceneRewardChecks.value[i]}WriteInt(${reward1}, 0x2800${element1.digit})\n`
           );
         } else {
           luascript.push(
-            `${cutsceneRewardChecks.value[i]}WriteInt(0x${reward1}, 0x0000${element1.digit})\n`
+            `${cutsceneRewardChecks.value[i]}WriteInt(${reward1}, 0x0000${element1.digit})\n`
           );
         }
         // Checks if second drafted object is an item (Category 0) or a command (Category 1) and writes the lua accordingly
         if (element2.category == "00") {
-          luascript.push(`WriteInt(0x${reward2}, 0x2800${element2.digit})\n`);
+          luascript.push(`WriteInt(${reward2}, 0x2800${element2.digit})\n`);
         } else {
-          luascript.push(`WriteInt(0x${reward2}, 0x0000${element2.digit})\n`);
+          luascript.push(`WriteInt(${reward2}, 0x0000${element2.digit})\n`);
         }
         // Checks if third drafted object is an item (Category 0) or a command (Category 1) and writes the lua accordingly
         if (element3.category == "00") {
           luascript.push(
-            `WriteInt(0x${reward3}, 0x2800${element3.digit})\nend`
+            `WriteInt(${reward3}, 0x2800${element3.digit})\nend\n`
           );
         } else {
           luascript.push(
-            `WriteInt(0x${reward3}, 0x0000${element3.digit})\nend`
+            `WriteInt(${reward3}, 0x0000${element3.digit})\nend\n`
           );
         }
       }
@@ -123,11 +116,11 @@ export function randomCutsceneRewards(
         // Checks if drafted object is an item (Category 0) or a command (Category 1) and writes the lua accordingly
         if (element1.category == "00") {
           luascript.push(
-            `${cutsceneRewardChecksTerra[i]}WriteInt(0x${reward1}, 0x2800${element1.digit})\nWriteInt(0x${reward2}, 0x2800${element1.digit})\nWriteInt(0x${reward3}, 0x2800${element1.digit})\nend\n`
+            `${cutsceneRewardChecksTerra[i]}WriteInt(${reward1}, 0x2800${element1.digit})\nWriteInt(${reward2}, 0x2800${element1.digit})\nWriteInt(${reward3}, 0x2800${element1.digit})\nend\n`
           );
         } else {
           luascript.push(
-            `${cutsceneRewardChecksTerra[i]}WriteInt(0x${reward1}, 0x0000${element1.digit})\nWriteInt(0x${reward2}, 0x0000${element1.digit})\nWriteInt(0x${reward3}, 0x0000${element1.digit})\nend\n`
+            `${cutsceneRewardChecksTerra[i]}WriteInt(${reward1}, 0x0000${element1.digit})\nWriteInt(${reward2}, 0x0000${element1.digit})\nWriteInt(${reward3}, 0x0000${element1.digit})\nend\n`
           );
         }
       }
@@ -140,31 +133,31 @@ export function randomCutsceneRewards(
         // Checks if first drafted object is an item (Category 0) or a command (Category 1) and writes the lua accordingly
         if (element1.category == "00") {
           luascript.push(
-            `${cutsceneRewardChecksTerra[i]}WriteInt(0x${reward1}, 0x2800${
+            `${cutsceneRewardChecksTerra[i]}WriteInt(${reward1}, 0x2800${
               element1.digit
-            })\nWriteInt(0x${reward2}, 0x2800${
+            })\nWriteInt(${reward2}, 0x2800${
               element1.digit
-            })\nWriteInt(0x${reward3}, 0x2800${element1.digit})\nend\n${
+            })\nWriteInt(${reward3}, 0x2800${element1.digit})\nend\n${
               cutsceneRewardChecksTerra[i + 1]
-            }WriteInt(0x${reward1}, 0x2800${
+            }WriteInt(${reward1}, 0x2800${
               element1.digit
-            })\nWriteInt(0x${reward2}, 0x2800${
+            })\nWriteInt(${reward2}, 0x2800${
               element1.digit
-            })\nWriteInt(0x${reward3}, 0x2800${element1.digit})\nend\n`
+            })\nWriteInt(${reward3}, 0x2800${element1.digit})\nend\n`
           );
         } else {
           luascript.push(
-            `${cutsceneRewardChecksTerra[i]}WriteInt(0x${reward1}, 0x0000${
+            `${cutsceneRewardChecksTerra[i]}WriteInt(${reward1}, 0x0000${
               element1.digit
-            })\nWriteInt(0x${reward2}, 0x0000${
+            })\nWriteInt(${reward2}, 0x0000${
               element1.digit
-            })\nWriteInt(0x${reward3}, 0x0000${element1.digit})\nend\n${
+            })\nWriteInt(${reward3}, 0x0000${element1.digit})\nend\n${
               cutsceneRewardChecksTerra[i + 1]
-            }WriteInt(0x${reward1}, 0x0000${
+            }WriteInt(${reward1}, 0x0000${
               element1.digit
-            })\nWriteInt(0x${reward2}, 0x0000${
+            })\nWriteInt(${reward2}, 0x0000${
               element1.digit
-            })\nWriteInt(0x${reward3}, 0x0000${element1.digit})\nend\n`
+            })\nWriteInt(${reward3}, 0x0000${element1.digit})\nend\n`
           );
         }
       }
@@ -180,21 +173,21 @@ export function randomCutsceneRewards(
         // Checks if first drafted object is an item (Category 0) or a command (Category 1) and writes the lua accordingly
         if (element1.category == "00") {
           luascript.push(
-            `${cutsceneRewardChecksTerra[j]}WriteInt(0x${reward1}, 0x2800${element1.digit})\nWriteInt(0x${reward3}, 0x2800${element1.digit})\n`
+            `${cutsceneRewardChecksTerra[j]}WriteInt(${reward1}, 0x2800${element1.digit})\nWriteInt(${reward3}, 0x2800${element1.digit})\n`
           );
         } else {
           luascript.push(
-            `${cutsceneRewardChecksTerra[j]}WriteInt(0x${reward1}, 0x0000${element1.digit})\nWriteInt(0x${reward3}, 0x0000${element1.digit})\n`
+            `${cutsceneRewardChecksTerra[j]}WriteInt(${reward1}, 0x0000${element1.digit})\nWriteInt(${reward3}, 0x0000${element1.digit})\n`
           );
         }
         // Checks if second drafted object is an item (Category 0) or a command (Category 1) and writes the lua accordingly
         if (element2.category == "00") {
           luascript.push(
-            `WriteInt(0x${reward2}, 0x2800${element2.digit})\nend\n`
+            `WriteInt(${reward2}, 0x2800${element2.digit})\nend\n`
           );
         } else {
           luascript.push(
-            `WriteInt(0x${reward2}, 0x0000${element2.digit})\nend\n`
+            `WriteInt(${reward2}, 0x0000${element2.digit})\nend\n`
           );
         }
       }
@@ -205,54 +198,54 @@ export function randomCutsceneRewards(
         // Checks if first drafted object is an item (Category 0) or a command (Category 1) and writes the lua accordingly
         if (element1.category == "00") {
           luascript.push(
-            `${cutsceneRewardChecksTerra[j]}WriteInt(0x${reward1}, 0x2800${element1.digit})\nWriteInt(0x${reward3}, 0x2800${element1.digit})\n`
+            `${cutsceneRewardChecksTerra[j]}WriteInt(${reward1}, 0x2800${element1.digit})\nWriteInt(${reward3}, 0x2800${element1.digit})\n`
           );
           // Checks if second drafted object is an item (Category 0) or a command (Category 1) and writes the lua accordingly
           if (element2.category == "00") {
             luascript.push(
-              `WriteInt(0x${reward2}, 0x2800${element2.digit})\nend\n${
+              `WriteInt(${reward2}, 0x2800${element2.digit})\nend\n${
                 cutsceneRewardChecksTerra[j + 1]
-              }WriteInt(0x${reward1}, 0x2800${
+              }WriteInt(${reward1}, 0x2800${
                 element1.digit
-              })\nWriteInt(0x${reward3}, 0x2800${
+              })\nWriteInt(${reward3}, 0x2800${
                 element1.digit
-              })\nWriteInt(0x${reward2}, 0x2800${element2.digit})\nend`
+              })\nWriteInt(${reward2}, 0x2800${element2.digit})\nend`
             );
           } else {
             luascript.push(
-              `WriteInt(0x${reward2}, 0x0000${element2.digit})\nend\n${
+              `WriteInt(${reward2}, 0x0000${element2.digit})\nend\n${
                 cutsceneRewardChecksTerra[j + 1]
-              }WriteInt(0x${reward1}, 0x2800${
+              }WriteInt(${reward1}, 0x2800${
                 element1.digit
-              })\nWriteInt(0x${reward3}, 0x2800${
+              })\nWriteInt(${reward3}, 0x2800${
                 element1.digit
-              })\nWriteInt(0x${reward2}, 0x0000${element2.digit})\nend`
+              })\nWriteInt(${reward2}, 0x0000${element2.digit})\nend`
             );
           }
         } else {
           luascript.push(
-            `${cutsceneRewardChecksTerra[j]}WriteInt(0x${reward1}, 0x0000${element1.digit})\nWriteInt(0x${reward3}, 0x0000${element1.digit})\n`
+            `${cutsceneRewardChecksTerra[j]}WriteInt(${reward1}, 0x0000${element1.digit})\nWriteInt(${reward3}, 0x0000${element1.digit})\n`
           );
           // Checks if second drafted object is an item (Category 0) or a command (Category 1) and writes the lua accordingly
           if (element2.category == "00") {
             luascript.push(
-              `WriteInt(0x${reward2}, 0x2800${element2.digit})\nend\n${
+              `WriteInt(${reward2}, 0x2800${element2.digit})\nend\n${
                 cutsceneRewardChecksTerra[j + 1]
-              }WriteInt(0x${reward1}, 0x0000${
+              }WriteInt(${reward1}, 0x0000${
                 element1.digit
-              })\nWriteInt(0x${reward3}, 0x0000${
+              })\nWriteInt(${reward3}, 0x0000${
                 element1.digit
-              })\nWriteInt(0x${reward2}, 0x2800${element2.digit})\nend`
+              })\nWriteInt(${reward2}, 0x2800${element2.digit})\nend`
             );
           } else {
             luascript.push(
-              `WriteInt(0x${reward2}, 0x0000${element2.digit})\nend\n${
+              `WriteInt(${reward2}, 0x0000${element2.digit})\nend\n${
                 cutsceneRewardChecksTerra[j + 1]
-              }WriteInt(0x${reward1}, 0x0000${
+              }WriteInt(${reward1}, 0x0000${
                 element1.digit
-              })\nWriteInt(0x${reward3}, 0x0000${
+              })\nWriteInt(${reward3}, 0x0000${
                 element1.digit
-              })\nWriteInt(0x${reward2}, 0x0000${element2.digit})\nend`
+              })\nWriteInt(${reward2}, 0x0000${element2.digit})\nend`
             );
           }
         }

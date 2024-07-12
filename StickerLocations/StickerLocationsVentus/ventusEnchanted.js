@@ -1,4 +1,4 @@
 export const ventusEnchantedStickers = [
-  { address: "D72DF6", name: "Dewey Sticker", prefix: "4" },
-  { address: "D72DFE", name: "Confetti Sticker", prefix: "4" },
+  { address: "version_choice({0x0, 0xD758F6}, game_version)", name: "Dewey Sticker", prefix: "4" },
+  { address: "version_choice({0x0, 0xD758FE}, game_version)", name: "Confetti Sticker", prefix: "4" },
 ];

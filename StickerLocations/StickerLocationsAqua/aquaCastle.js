@@ -1,4 +1,4 @@
 export const aquaCastleStickers = [
-  { address: "D72D6E", name: "Fireworks Sticker", prefix: "3" },
-  { address: "D72DB6", name: "Bubble Sticker", prefix: "3" },
+  { address: "version_choice({0x0, 0xD7586E}, game_version)", name: "Fireworks Sticker", prefix: "3" },
+  { address: "version_choice({0x0, 0xD758B6}, game_version)", name: "Bubble Sticker", prefix: "3" },
 ];
